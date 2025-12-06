@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <header class="topbar">
+            <div class="brand">
+                <div class="logo">🧩</div>
+                <div>
+                    <div class="title">Sudoku</div>
+                    <div class="subtitle">Click a cell • Type 1–9 • Backspace clears • N toggles notes</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="timer">
+                    <div class="timerLabel">Time</div>
+                    <div id="timer" class="timerValue">00:00</div>
+                    <button id="pause" class="btn">Pause</button>
+                </div>
+
+                <label class="select">
+                    <span>Difficulty</span>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </label>
+
+                <button id="newGame" class="btn primary">New Game</button>
+                <button id="toggleNotes" class="btn">Notes: Off</button>
+                <button id="hint" class="btn">Hint</button>
+                <button id="check" class="btn">Check</button>
+                <button id="solve" class="btn danger">Solve</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="boardWrap">
+                <div id="board" class="board" aria-label="Sudoku board" role="grid"></div>
+                <div class="status">
+                    <div id="statusText">Ready.</div>
+                </div>
+            </section>
+
+            <aside class="side">
+                <div class="pad">
+                    <div class="padTitle">Keypad</div>
+                    <div id="keypad" class="keypad"></div>
+                    <div class="padHelp">
+                        <div><kbd>1</kbd>–<kbd>9</kbd> set value</div>
+                        <div><kbd>Backspace</kbd>/<kbd>Del</kbd> clear</div>
+                        <div><kbd>Arrow keys</kbd> move</div>
+                        <div><kbd>N</kbd> toggle notes</div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
